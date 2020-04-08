@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>폼연습</title>
+		<style>
+			.box1 { <!-- ' . '이 붙 어 있 다. 뭐다? 'CLASS'다.-->
+				border-radius : 10px;
+				border : 2px solid #73AD21;
+				background-color : #73AD21;
+				padding : 10px;
+				margin : 10px;
+				width : 400 px;
+				height : 20px;
+				color : white;
+				text-align : center;
+			}
+			.box2 {
+				padding : 10px;
+				margin : 10px;
+				width : 400px;
+			}
+			.box3 {
+				border : 1px solid #8C8C8C;
+				width : 100%;
+				height : 40px;
+				display : inline-block; <!--inline을 block화 시켰다.-->
+				padding : 5px 40px; <!--위아래 왼쪽오른쪽-->
+				box-sizing : border-box;
+			}
+			input[type=text]{
+				width : 100%;
+				height : 40px;
+				border : 1px solid #8C8C8C;
+				box-sizing : border-box; <!--모서리를 둥글게-->
+				padding : 5px;
+			}
+			input[type=submit], input[type=reset]{
+				background-color : #73AD21;
+				width : 45%;
+				border : none;
+				padding : 10px;
+				margin : 5px;
+				color : white;
+			}
+			#sel_h1, #txt_h2, #txt_h3{
+				width : 30%;
+				height : 40px;
+			}
+			#txt_mail{
+				width : 80%;
+			}
+			textarea {
+				width : 100%;
+				height : 80px;
+			}
+			label[for] {
+				color : blue;
+			}
+		</style>
+	</head>
+	<body>
+		<form name="form1" method="get" action="web05.php">
+			<div class="box1">
+				신청서 양식
+			</div>
+			<div class="box2">
+				<p>
+				<label for="txt_hakbun">학번</label></br>
+				<input type="text" name="txt.hakbun" id="txt_hakbun" placeholder="학번 입력">
+				</p>
+				<p>
+					<label for="text_name">성명</label><br>
+					<input type="text" name="txt_name" id="txt_name" placeholder="성명 입력하세요">
+				</p>
+				<p>
+				<label for="txt_pwd">비밀번호</label><br/>
+				<input type="password" name="txt_pwd" id="txt_pwd" placeholder="비밀번호 입력">
+				</p>
+				<p>
+					<label for="text_mail">E-mail</label><br>
+					<input type="text" name="txt_mail" id="txt_mail" placeholder="메일을 입력하세요">
+					<input type="checkbox" name="ck_recv">
+					<label for="ck_rev">수신</label>
+				</p>
+				<p>
+					<label for="txt_tel">연락처</label><br/>
+					<select name="sel_h1" id="sel_h1">
+						<caption value="010" selected>010</option>
+						<caption value="011">011</option>
+						<caption value="017">017</option>
+						<caption value="051">051</option>
+					</select>
+					<input type="text" name="txt_h2" id="txt_h2">
+					<input type="text" name="txt_h3" id="txt_h3">
+				</p>
+				<p>
+					<label>성별</label><br>
+					<span class="box3"> <!--span tag는 block이 아닌 inline 요소라서 가로 세로를 잡을 수 없다.-->
+					<label for="r_man">남</label>
+					<input type="radio" name="r_gender" id="r_gender_man"> <!--반드시 r_gender를 동일하게 해줘야 하나만 선택가능-->
+					<label for="r_woman">여</label>
+					<input type="radio" name="r_gender" id="r_gender_woman" checked>
+					</span>
+				</p>
+				<p>
+				<label for="txt content"> 신청이유 </label></br>
+				<textarea name="txt_content" id="txt_condent">
+				</textarea>
+				</p>
+				<p>
+				<input type="submit" value="신청">
+				<input type="reset" value="취소">
+				</p>
+			</div>
+		</form>
+	</body>
+</html>

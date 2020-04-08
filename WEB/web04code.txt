@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>HTML 연습</title>
+		<style>
+			html, body {
+				margin : 0px ;
+				padding : 0px ;
+			}
+			header {
+				width : 100% ;
+				background-color : #005766;
+				height : 200px ;
+			}
+			header > div {
+				float : left ;
+			}
+			header > img {
+				height : 150px;
+				padding : 20px;
+			}
+			header h1, header p {
+				color : white ;
+				margin : 30px ;
+				text-align : center ;
+			}
+			nav {
+				clear : both ;
+				background-color : #3DB7cc;
+				height : 40px ;
+			}
+			nav a {
+				display : inline-block ;
+				width : 100px;
+				height : 40px;
+				padding : 5px;
+				text-decoration : none ;
+				text-align : center;
+			}
+			nav a:link, nav a:visited {
+				color : white ;
+			}
+			nav a:hover, nav a: active {
+				background-color : white;
+				color : #3DB7cc;
+			}
+			section{
+				width : 45%
+				heigh : 200px;
+				margin : 10px;
+				padding : 10px;
+				boder : 1px solid #3DB7cc;
+				box-sizing : dorder-box;
+				float-left ;
+			}
+			section h2 {
+				background-color : #3DB7cc;
+				color : white ;
+				margin : 5px;
+				padding : 10px;
+			}
+			section ol, section ul, section p, section div {
+				padding-left : 50px;
+			}
+			footer {
+				clear : both ;
+				height : 50px ;
+				bacckgorund-color : #EAEAEA ;
+				color: #5D5D5D ;
+				padding : 20px ;
+				font-size : 12px ;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div>
+				<img src="./img/pnu.png" alt="본인사진">
+			</div>
+			<div>
+			<h1>Park Jeong Yong</h1>
+			<p>박정용</p>
+			</div>
+		</header>
+		<nav>
+			<a href="#s1">[개인정보]</a>&nbsp;&nbsp;
+			<a href="#s2">[학력사항]</a>&nbsp;&nbsp;
+			<a href="#s3">[자격사항]</a>&nbsp;&nbsp;
+			<a href="#s4">[자기소개]</a>&nbsp;&nbsp;
+		</nav>
+		<section id="s1">
+			<h2 class="c1">개인정보<h2>
+			<ul>
+			<li>본인성명</li>
+			<li>연락처</li>
+			<li>E-Mail</li>
+			<li>주소</li>
+			</ul>
+			<ul>
+			<li><img src="./img/pnu.png" width="20px"><a href="http://www.pusan.ac.kr">대학교 재학</a></li>
+			<li><img src="./img/pnu.png" width="20px"><a href="http://www.pusan.ac.kr">고등학교 졸업</a></li>
+			<li><img src="./img/pnu.png" width="20px"><a href="http://www.pusan.ac.kr">중학교 졸업</a></li>
+			<li><img src="./img/pnu.png" width="20px"><a href="http://www.pusan.ac.kr">초등학교 졸업</a></li>
+			</ul>
+		</section>
+		<section>
+		<section id="s2">
+			<h2 class="c2">학력사항</h2>
+			<ul>
+			<li>취득자격증 1</li>
+			<li>취득자격증 2</li>
+			<li>취득자격증 3</li>
+			</ul>
+		</section>
+		<section id ="s4">
+			<h2 class = "c2">자기소개</h2>
+			<div>
+				<a href="../01/web01_2.html">SWOT 분석 </a>
+			</div>
+			<p>
+				본인 소개를 작성하세요.
+			</p>
+		</section>
+		<footer>
+		&copy; 본인 영문이름 본인 주소
+		</footer>
+	</body>
+</html>
