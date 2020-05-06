@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>JAVASCRIPT 연습</title>
+<style>
+	#msg {
+		width : 200px;
+		height : 80px;
+		border : 2px solid green;
+		padding : 20px;
+		margin-top : 20px;
+	}
+</style>
+<script>
+//		function hello(){
+//		 alert("안녕하세요");
+//		}
+//		function hello2(){
+//			document.write("안녕하세요");
+//		}
+//		function hello3(){
+//			console.log("안녕하세요");
+//		}
+		function hello4(kname){ //김태그라는 글자가 여기 매개에 저장됨.
+			//document.getElementsByTagName("h1")[0].innerHTML = "안녕하세요";
+//			document.getElementById("id_h1").innerHTML = kname + "안녕하세요..." ;
+			//form에 <input type="button" value="확인4" onclick="hello4('김태그');"><br>
+			var kname = form1.txt1.value ;
+			document.getElementById("msg").innerHTML = kname + "님 안녕하세요!!!";
+		}
+</script>
+</head>
+<body>
+<h1 id="id_h1">JAVASCRIPT 연습 </h1>
+<form name = "form1">
+	<input type="text" name="txt1" id="txt1" placeholder="이름입력">
+	<input type="button" value="확인4" onclick="hello4();"><br>
+</form>
+<div id="msg">
+</div>
+</body>
+</html>

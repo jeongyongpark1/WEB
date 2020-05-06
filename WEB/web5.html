@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>폼연습</title>
+		<style>
+			.box1 { <!-- ' . '이 붙 어 있 다. 뭐다? 'CLASS'다.-->
+				border-radius : 10px;
+				border : 2px solid #73AD21;
+				background-color : #73AD21;
+				padding : 10px;
+				margin : 10px;
+				width : 400 px;
+				height : 20px;
+				color : white;
+				text-align : center;
+			}
+			.box2 {
+				padding : 10px;
+				margin : 10px;
+				width : 400px;
+			}
+			.box3 {
+				border : 1px solid #8C8C8C;
+				width : 100%;
+				height : 40px;
+				display : inline-block; <!--inline을 block화 시켰다.-->
+				padding : 5px 40px; <!--위아래 왼쪽오른쪽-->
+				box-sizing : border-box;
+			}
+			input[type=text]{
+				width : 100%;
+				height : 40px;
+				border : 1px solid #8C8C8C;
+				box-sizing : border-box; <!--모서리를 둥글게-->
+				padding : 5px;
+			}
+			input[type=button], input[type=reset]{
+				background-color : #73AD21;
+				width : 45%;
+				border : none;
+				padding : 10px;
+				margin : 5px;
+				color : white;
+			}
+			#txt_year, #sel_mon, #txt_day {
+				width : 30%;
+				height : 40px;
+			}
+			textarea {
+				width : 100%;
+				height : 80px;
+			}
+		</style>
+		<script>
+			function show() {
+				var str = "" ;
+			
+				str = str + form1.txt_name.value + "<br>" ;
+				str = str + form1.txt_mail.value + "<br>" ;
+				str = str + form1.txt_year.value + "년" + form1.sel_mon.value + "월" + form1.txt_day.value + "<br>"  ;
+				str = str + form1.r_gender.value + "<br>" ;
+				str = str + form1.ck_c.value + "<br>" ;
+				str = str + form1.ck_python.value + "<br>" ;
+				str = str + form1.ck_r.value + "<br>" ;
+				str = str + form1.ck_app.value + "<br>" ;
+				str = str + form1.txt_content.value + "<br>" ;
+				
+				document.write(str);
+			)
+		</script>
+	</head>
+	<body>
+		<form name="form1" method="post" action="web05.php">
+			<div class="box1">
+				개인 신청 자료
+			</div>
+			<div class="box2">
+				<p>
+					<label for="text_name">성명</label><br>
+					<input type="text" name="txt_name" id="txt_name" placeholder="성명 입력하세요">
+				</p>
+				<p>
+					<label for="text_mail">E-mail</label><br>
+					<input type="text" name="txt_mail" id="txt_mail" placeholder="메일을 입력하세요">
+				</p>
+				<p>
+					<label>생년월일</label><br>
+					<input type="text" name="txt_year" class="c1" id="txt_year" placeholder="년" size="5" maxlength="4">
+					<select name="sel_mon" class="c1" id="sel_mon">
+						<option value="">월</option>
+						<option value="1">1월</option>
+						<option value="2">2월</option>
+						<option value="3">3월</option>
+						<option value="4">4월</option>
+						<option value="5">5월</option>
+						<option value="6">6월</option>
+						<option value="7" selected>7월</option>
+						<option value="8">8월</option>
+						<option value="9">9월</option>
+						<option value="10">10월</option>
+						<option value="11">11월</option>
+						<option value="12">12월</option>
+					</select>
+					<input type="text" name="txt_day" id="txt_day" placeholder="일" size="5" maxlength="2">
+				</p>
+				<p>
+					<label>성별</label><br>
+					<span class="box3"> <!--span tag는 block이 아닌 inline 요소라서 가로 세로를 잡을 수 없다.-->
+					<input type="radio" name="r_gender" id="r_man" value="남"> <!--반드시 r_gender를 동일하게 해줘야 하나만 선택가능-->
+					<label for="r_man">남</label>
+					<input type="radio" name="r_gender" id="r_woman" value="여" checked>
+					<label for="r_woman">여</label>
+					</span>
+				</p>
+				<p>
+					<label>관심분야</label>
+					<span class="box3">
+					<input type="checkbox" name="ck_c" id="ck_c" value="C" checked>
+					<label for="ck_c">C</label>
+					<input type="checkbox" name="ck_python" id="ck_python" checked>
+					<label for="ck_python">Python</label>
+					<input type="checkbox" name="ck_r" id="ck_r">
+					<label for="ck_r">R</label>
+					<input type="checkbox" name="ck_app" id="ck_app">
+					<label for="ck_app">AppInventor</label>
+					</span>
+
+				</p>
+				<p>
+					<label for="txt_content">기타</label><br>
+					<textarea name="txt_content" id="txt_content" rows="10"></textarea> 
+					<!-- 10줄을 입력할 수 있는 텍스트가 된다 -->
+				</p>
+				<p>
+					<input type="button" value="확인">
+					<input type="reset" value="취소">
+				</p>
+			</div>
+		</form>
+	</body>
+</html>

@@ -58,6 +58,20 @@
 				color : blue;
 			}
 		</style>
+	
+		<style>
+			function show() {
+				var str = "" ;
+				
+				str = str + "학번 : " + form1.txthakbun.value + "\n";
+				str = str + "성명 : " + form1.name.value "\n";
+				str = str + "E-mail : " + form1.txt_mail.value "\n";
+				str = str + "연락처 : " + form1.sol_h1.value + " " + form1.txt_h2.value + " ""\n";
+				str = str + "성별 : " + form1.r_gender.value "\n";
+				
+				alert(str) ;
+			}
+		</style>
 	</head>
 	<body>
 		<form name="form1" method="get" action="web05.php">
@@ -97,19 +111,19 @@
 				<p>
 					<label>성별</label><br>
 					<span class="box3"> <!--span tag는 block이 아닌 inline 요소라서 가로 세로를 잡을 수 없다.-->
-					<label for="r_man">남</label>
-					<input type="radio" name="r_gender" id="r_gender_man"> <!--반드시 r_gender를 동일하게 해줘야 하나만 선택가능-->
-					<label for="r_woman">여</label>
-					<input type="radio" name="r_gender" id="r_gender_woman" checked>
+					<label for="r_gender_man">남</label>
+					<input type="radio" name="r_gender" id="r_gender_man" value="남"> <!--반드시 r_gender를 동일하게 해줘야 하나만 선택가능-->
+					<label for="r_gender_woman">여</label>
+					<input type="radio" name="r_gender" id="r_gender_woman" value="여" checked>
 					</span>
 				</p>
 				<p>
-				<label for="txt content"> 신청이유 </label></br>
+				<label for="txt content"> 신청이유 </label><br/>
 				<textarea name="txt_content" id="txt_condent">
 				</textarea>
 				</p>
 				<p>
-				<input type="submit" value="신청">
+				<input type="button" value="신청" onclick="show();">
 				<input type="reset" value="취소">
 				</p>
 			</div>

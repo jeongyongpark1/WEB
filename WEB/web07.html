@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>자바스크립트 연습</title>
+
+<style>
+	input[tyoe=button], inputp[type=reset]{
+		width : 40px;
+		heiht : 30px;
+	}
+	.box1 {
+		border-radius : 10px;
+		border : 2px solid #73AD21;
+		background-color : #73AD21;
+		padding :10px;
+		margin : 10px;
+		width : 400px;
+		height : 20px;
+		color : white;
+		text-align : center;
+	}
+	.box2 {
+		border : 2px solid #73AD21;
+		padding : 10px;
+		margin : 10px;
+		width : 400px;
+		height : 150px;
+		text-align : center;
+	}
+	.box3 {
+		border-radius : 10px;
+		border : 2px solid #73AD21;
+		padding : 10px;
+		margin : 10px;
+		width : 400px;
+		height : 50px;
+		text-align : center;
+	}
+	.pc1 {
+		width : 25%;
+		text-align : center;
+		float : left ;
+	}
+	.pc2 {
+		width : 5%;
+		text-align : center;
+		float : left ;
+	}
+	.pc3 {
+		clear : both ;
+		width : 95% ;
+		padding-left : 20px;
+		text-align : left;
+		background-color : #E4F8BA;
+		color : red;
+	}
+	#msg {
+		font-size : 20px;
+	}
+	
+</style>
+
+<script>
+	function calShow() {
+	//공백 확인 //공백을 잊지 않도록 input txt 안에 값이 있느냐 없느냐를 따져야 해!
+		if (myform.txt1.value == "") {
+			alert("숫자 1을 입력하세요");
+			myform.txt1.focus(); //커서를 넣을 수 있다! focus 맞춰주기
+			return;
+		}
+		if (myform.txt2.value ==""){
+			alert("숫자 2를 입력하세요");
+			myform.txt2.focus();
+			return;
+		}
+		if (myform.r_op.value =="") {
+			alert("연산자를 선택하세요.");
+			return;
+		}
+		// 연산
+		// 변수를 선언
+		var num1 = parseInt(myform.txt1.value) ; //숫자로 만들어 주는 변수
+		var num2 = parseInt(myform.txt2.value) ;
+		var ans = 0;
+		var str = ""; //결과 출력
+		//var num1 = myform.txt1.value ;
+		//var num2 = myform.txt2.value ;
+		//var ans = 0;
+		//ㄴ 변수를 이렇게 쓰면 문자 연산자가 되어 1+2=12가 됨
+		
+		/*계산
+		if (myform.r_op.value == "+") ans = num1 + num2 ; 
+		else if (myform.r_op.value == "-") ans = num1 - num2 ;
+		else if (myform.r_op.value == "x") ans = num1 * num2 ;
+		else if (myform.r_op.value == "/") ans = num1 / num2 ;
+		*/
+		switch(myform.r_op.value) {
+			case "+" :
+				ans = num1 + num2 ;
+				break;
+			case "-" :
+				ans = num1 - num2 ;
+				break;
+			case "x" :
+				ans = num1 * num2 ;
+				break;
+			case "/" :
+				ans = num1 / num2 ;
+				break;
+		}
+		
+		//결과 만들기
+		if(myform.ck_eval.checked == true) {
+			str = num1 + myform.r_op.value + num2 + "=" + ans ;
+		}
+		else { // 그렇지 않으면
+			str = ans ;
+		}
+		
+		//결과 출력
+		document.getElementById("msg").innerHTML = ans;
+		
+	}
+
+	function clearShow() {
+		//myform.txt1.value = "" ; //아무것도 없게끔 하라!
+		myform.reset(); // 일일히 위 문장처럼 하지 않아도 form을 리셋시켜줌
+		document.getElementById("msg").innerHTML = "";
+	}
+</script>
+</head>
+<body>
+	<form name="myform"> <!--- 강의 여기서 멈췄따! --->
+	<div class="box1">
+		간단한 계산기
+	</div>
+	<div class ="box2">
+		<p class ="pc1">
+		<input type = "text" name ="txt1" placeholder="숫자1" size="5">
+		</p>
+		<p class="pc2">
+		<input type="radio" name="r_op" id="r_op1" value="+"><br>
+		<input type="radio" name="r_op" id="r_op2" value="-"><br>
+		<input type="radio" name="r_op" id="r_op3" value="x"><br>
+		<input type="radio" name="r_op" id="r_op4" value="/"><br>
+		</p>
+		<p class="pc2">
+		<label for="r_op1">+</label><br>
+		<label for="r_op1">-</label><br>
+		<label for="r_op1">x</label><br>
+		<label for="r_op1">/</label><br>
+		</p>
+		<p class="pc1">
+		<input type="text" name="txt2" placeholder="숫자2" size="5">
+		</p>
+		<p class="pc1">
+		<input type = "button" value="=" onclick="calShow();">
+		<input type = "button" value="취소" onclick="cearShow();">
+		</p>
+		<p class="pc3">
+		<input type="checkbox" name="ck_eval" id="ck_eval">
+		<label for="ck_eval">수식포함</label>
+		</p>
+	</div>
+	</form>
+	<div class="box3">
+		<div id="msg"></div>
+	</div>
+</body>
+</html>	
