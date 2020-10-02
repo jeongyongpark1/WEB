@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+		<title>jquery 연습</title>
+		<style>
+			.box1 {
+				border-radius: 10px;
+				border: 2px solid #73AD21;
+				background-color : #73AD21;
+				padding: 10px;
+				margin: 10px;
+				width : 400px;
+				height : 20px;
+				color : white;
+				text-align : center;
+			}
+			.box2 {
+				width : 120px;
+				height : 120px;
+				margin : 10px;
+				padding-top: 50px;
+				text-align : center;
+				border : 2px solid grey;
+				box-sizing : border-box;
+				float : left;
+			}
+			form {
+				padding : 10px;
+				margin : 10px;
+				width : 400px;
+				height : 20px;
+				text-align : center;
+				clear : both;
+			}
+		</style>
+		
+	</head>
+	
+		<script src="https://ajax.googleapis.com/ajax/libs.jquery/3.3.1/jquery.min.js"></script>
+		<script>
+			//jquery, 기본 문법은 $로 시작한다.
+			$(document).ready(function(){
+				$("#bt1").click(function(){
+					alert("안녕하세요");
+				});
+			}); //시작 구문
+			
+		</script>
+	</head>
+	<body>
+		<div class="box1">jQuery</div>
+		<form name="form1">
+			<input type="button" value="확인" id="bt1">
+		</form>
+	</body>
+</html>

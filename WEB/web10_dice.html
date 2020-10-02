@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>jquery연습</title>
+		<style> 
+		<!---
+			font-size : 30px;
+			text-align : center;  안 보여줘서 못 씀--->
+		</style>
+	<script>
+		$(document).ready(function(){
+			$("p>img").click(function(){
+				var clickCnt = 0; //클릭이 발생할때마다 clickCnt 1씩 증가 (카운트)
+				var winCnt = 0; // 맞은 횠수 카운트
+				var n = $(this).attr("src"); //var == 변수 선언
+				n = n.replace("./img/", "") ;
+				n = n.parseInt(".png", "") ; // 공백으로 만들어줘도 방법이 된다! //parseInt를 통해 숫자화
+				
+				var com = Math.floor(Math.randodm()*6+1) ; // 1~6까지의 숫자가 나오도록 함
+				//console.log() ; 콘솔해보면 제대로 되고 있는 지 알 수 있다!
+				$("#img1").attr("src", "./img/"+n+".png");
+				$("#img2").attr("src", "./img/c"+com+".png");
+				
+				var str = "";
+				if(n==com){
+				//	$("#msg").html("맞았습니다."); // html 대신 text라고 하면 문구 출력
+					str = str "맞았습니다" + "<br>";
+					winCnt ++; //맞을 때마다 증가.
+				}
+				//$("#msg").html("맞았습니다."+"<br>"+"전체 횟수"+clickCnt);  이렇게 하면 길어지잖아
+				else{
+					//$("#msg").html("틀렸습니다.");
+					str = str + "틀렸습니다" + "<br>";
+				}
+					str = str + "전체횟수" + clickCnt + "," ;
+					str = str + "맞은횟수" + winCnt ;
+					$("msg").html(str);
+				
+			});
+			
+			$("input[type=button]").click(function(){
+				$("#img1").attr("src","./img/q.png");
+				$("#img1").attr("src","./img/q.png"); //여기서 주의!!!!!!!!! 전역변수의 초기화도 다시하기할 때 꼭 해줘야 한다.
+			
+				$("msg").html("");
+				clickCut = 0 ;
+				winCut = 0 ;
+			});
+		});
+	</script>
+	</head>
+	<body>
+	
+	<form name="myform">
+		<div class="box1">
+			주사위게임
+		</div>
+		<div class="box2">
+			<p>
+			<img src="./img/1.png" onclick="show(1);"> <!---이 그림이 눌러졌을 때 1이라는 숫자를 주겠다는 의미--->
+			<img src="./img/2.png" onclick="show(2);">
+			<img src="./img/3.png" onclick="show(3);">
+			</p>
+			<p>
+			<img src="./img/4.png">
+			<img src="./img/5.png">
+			<img src="./img/6.png">
+			</p>
+			<p>
+			<input type="button" value="다시하기"> <!---아이디가 없죠? 아이디를 쓰면 제일 간단하게 찾을 수 있긴 해요.--->
+			<!---근데 인풋 타입이 button인 것을 찾을 수도 있어서 이게 한번 밖에 안 쓰였기 때문에 이렇게도 할 수 있어요!--->
+			</p>
+		</div>
+		<div id="msgimg">
+			<img src="./img/q.png" id="img1">
+			<img src="./img/vs.png">
+			<img src="./img/q.png" id="img2">
+		</div>
+		<div id="msg">
+		
+		</div>
+	</body>

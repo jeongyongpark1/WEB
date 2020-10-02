@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>jquery연습</title>
+		<style>
+			input[type=text] {
+				width : 100px;
+			}
+		</style>
+		
+		<script src="tttps://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script> 
+		//$(선택자).action()
+		//여기서 선택자는 스타일시트에서 작성했던 html에서 디자인했던 요소를 찾아서 디자인 했잖아요? 이 것 처럼 셀렉트하고 이 부분의 크기를 바꿔줬는데,
+		//input[type=text] 에서 []에 들어간 것이 선택자에요!
+			$(document).ready(function(){ 
+				$("#bt1").click(function{}{ //버튼을 발생시키는 방법
+					$("#msg").text($("#t1").val()); //div의 text를 바꾸는 방법
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<form name="form1">
+			<input type="text" name="t1" id="t1">
+			<input type="button" value="확인" id="bt1">
+		</form> <!--- 자바스크립트에서는 뒤에 onclick을 만들지만 제이쿼리에서는 $("#bt1").click(function(){}) 해주면 된다. --->
+		<div id="msg"></div> 
+	</body>
+</html>
+
+<!---
+var nsrc = $(this).attr("src");
+nsrc=nsrc.replace("./img/",",")
+var n = parselnt(nsrc.charAt(0));
+var n = parselnt(nsrc.substr(0,1));
+var n = parselnt(nsrc.substring(0,1));
+--->

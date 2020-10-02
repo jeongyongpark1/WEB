@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>가위바위보</title>
+		<style>
+		
+		</style>
+		
+	<script>
+		var clickCnt = 0; //전체 횟수
+		var winCnt = 0; //이긴 횟수
+	
+		$(document).ready(function(){
+			$("#li, #i2, #i3").click(funtion(){
+				//console.log($(this).attr("id"));
+				clickCnt++;
+				var user = perseInt($ (this).attr("id").charAt(1));
+				var com = Math.floor(Math.random()*3 + 1);
+				
+				//유저의 그림
+				switch(user) {
+					case 1 :
+						$("#img1").attr("src", "./img/scissrs.png");
+						break;
+					case 2 :
+						$("#img1").attr("src", "./img/rock.png");
+						break;
+					case 3 :
+						$("#img1").attr("src", "./img/paper.png");
+						break;
+				}
+				
+				// 컴퓨터의 그림
+				switch(com) {
+					case 1 :
+						$("#img2").attr("src", "./img/scissrscom.png");
+						break;
+					case 2 :
+						$("#img2").attr("src", "./img/rockcom.png");
+						break;
+					case 3 :
+						$("#img2").attr("src", "./img/papercom.png");
+						break;
+				}
+				
+				//결과
+				var str="" ;
+				
+				if ( (user == 1 && com == 3) || (user == 2 && com == 1) || (user == 3 && com == 2) ) {
+					str = str + "이겼습니다";
+					winCnt++;
+				}
+				else if (user == com) {
+					str = str + "비겼습니다";
+				}
+				else{
+					str = str + "졌습니다."
+				}
+				str = str + "전체횟수 : " + clickCnt + ",";
+				str = str + "이긴횟수 : " + winCnt + "(" +;
+				str = str + (winCnt / clickCnt * 100).toFixed(2) + "%)"; //toFixed() 메소드를 통해 소수점 둘째자리까지만.
+				
+				$("#msg").html(str);
+			});
+			$("#bt1").click(function(){
+				$("#img1").attr("src", "./img/q.png");
+				$("#img2").attr("src", "./img/q.png");
+			});
+		});
+	</script>
+	</head>
+	<body>
+	<form name = "myform">
+		<div class = "box1">
+			가위바위보게임
+		<div class = "box2">
+			<p>
+			<img src="./img/scissors.png" id = "i1">
+			<img src="./img/rock.png" id = "i2">
+			<img src="./img/paper.png" id = "i3">
+			</p>
+			
+			<p>
+			<input type="button" value = "다시하기" id = "bt1">
+			</p>
+		</div>
+		<div id = "msgimg">
+			<img src="./img/q.png" id = "img1">
+			<img src="./img/vs.png">
+			<img src="./img/q.png" id = "img2">
+		</div>
+		<div id = "msg">
+		</div>
